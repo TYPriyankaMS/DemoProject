@@ -1,0 +1,20 @@
+<div *ngIf='productResponce && !productResponce.products'>
+    <div class="mt-5 pt-5 display-2 text-center">Product not Found</div>
+</div>
+<div *ngIf='!productResponce' class="mt-5 pt-5 display-2 text-center">Search for Product Name</div>
+<nav class="navbar navbar-expand-sm mt-5 pt-5">
+    <div class="collapse navbar-collapse col-md-4 offset-md-4" id="collapsibleNavId">
+        <form class="form-inline my-2 my-lg-0" #form='ngForm' (ngSubmit)='onSubmit(form)'>
+            <input class="form-control mr-sm-2" type="text" name='name' #name='ngModel' ngModel placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div *ngIf='productResponce && productResponce.products'>
+    <div class="card mt-5 pt-5 col-md-4 offset-md-4">
+        <div class="card-header"> {{productResponce.products[0].name}} </div>
+        <div class="card-body"> <img src="{{productResponce.products[0].imageUrl}}" alt="" width="100%" height="400px"> </div>
+        <div class="card-text">{{productResponce.products[0].details}}</div>
+        <div class="card-footer">Rs. {{productResponce.products[0].price}}/-</div>
+    </div>
+</div>

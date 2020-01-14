@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+    <p class="navbar-brand text-primary">Product Management</p>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item float-right">
+                <div [class]='uiClass[0]' (click)='onClick(0)'><a class="nav-link" routerLink="/">Home</a></div>
+            </li>
+            <li class="nav-item">
+                <div [class]='uiClass[1]' (click)='onClick(1)'><a class="nav-link" routerLink="/add" *ngIf='isLogedin()'>Add Product</a></div>
+            </li>
+            <li class="nav-item">
+                <div [class]='uiClass[2]' (click)='onClick(2)'><a class="nav-link" routerLink="/search">Fetch All</a></div>
+            </li>
+            <li class="nav-item">
+                <div [class]='uiClass[3]' (click)='onClick(3)'><a class="nav-link" routerLink="/search-one">Search</a></div>
+            </li>
+            <li class="nav-item">
+                <div [class]='uiClass[4]' (click)='onClick(4)'><a class="nav-link" routerLink="/data-from-json">Read Json</a></div>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" routerLink="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" routerLink="#">Action 1</a>
+                    <a class="dropdown-item" routerLink="#">Action 2</a>
+                </div>
+            </li> -->
+        </ul>
+        <div class="navbar-nav">
+            <div [class]='uiClass[5]' (click)='onClick(5)'><a class="nav-link float-right" style="text-decoration: none;" routerLink="/login" *ngIf='!isLogedin()'>Login</a></div>
+            <div class="float-right" (click)='onClick(6)' style="text-decoration: none; cursor: pointer;" (click)='logout()' *ngIf='isLogedin()'>Logout</div>
+        </div>
+    </div>
+</nav>

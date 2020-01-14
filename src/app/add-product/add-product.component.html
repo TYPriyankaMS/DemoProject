@@ -1,0 +1,38 @@
+<div class="mt-5 pt-5"></div>
+<div *ngIf='productResponce' class="col-md-4 offset-md-4">
+    <div [class]='uiClass'>
+        {{productResponce.description}}
+    </div>
+</div>
+<form class="col-md-4 offset-md-4 mb-4" [formGroup]='productForm' (ngSubmit)='onSubmit()'>
+    <div class="card">
+        <div class="card-header">
+            <h3>Add Product</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group ">
+                <label for="name ">Name</label>
+                <input type="text" class="form-control" name="name" id="name" formControlName='name' pattern="[A-Za-z0-9]*">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="text" class="form-control" name="quantity" id="quantity" formControlName='quantity' pattern="[0-9]*">
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">Image Url</label>
+                <input type="text" class="form-control" name="imageUrl" id="imageUrl" formControlName='imageUrl'>
+            </div>
+            <div class="form-group ">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" name="price" id="price" formControlName='price' pattern="[0-9]*">
+            </div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control" name="details" id="details" formControlName='details' rows="3"></textarea>
+            </div>
+        </div>
+        <div class="card-footer block">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>

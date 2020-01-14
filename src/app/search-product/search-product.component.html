@@ -1,0 +1,24 @@
+<div class="mt-5 pt-5"></div>
+<div class="form-group col-md-4 offset-md-4">
+    <input type="text" class="form-control" [(ngModel)]="search" id="" placeholder="Search for products">
+</div>
+<div *ngIf='productResponce'>
+    <div class="col-md-4 float-left" *ngFor='let product of productResponce.products | filter : search'>
+        <div class="card">
+            <div class="card-header"> {{product.name}} </div>
+
+            <div class="card-body" style="height: 350px;">
+                <div class="card-img"> <img src="{{product.imageUrl}}" alt="" width="100%" height="250px"> </div>
+                <div class="card-title">{{product.details}}</div>
+                <div class="card-title">{{product.quantity}}</div>
+            </div>
+            <div class="card-footer">
+                <div class="float-left">Rs. {{product.price}}/-</div>
+                <div class="text-right">
+                    <button class="btn btn-success mr-1" type="button" (click)='onUpdate(product.name)'>Update</button>
+                    <button class="btn btn-secondary ml-1" type="button" (click)='onDelete(product.id)'>Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

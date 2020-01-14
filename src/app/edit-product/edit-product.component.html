@@ -1,0 +1,30 @@
+<form class="mt-5 pt-5 col-md-4 offset-md-4 " [formGroup]='productForm' (ngSubmit)='onSubmit()' *ngIf='productForm'>
+    <div class="display-4 ">Update Product</div>
+    <input type="hidden" class="form-control" name="id" id="id" formControlName='id' pattern="[A-Za-z0-9]*">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" formControlName='name' pattern="[A-Za-z0-9]*">
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="text" class="form-control" name="quantity" id="quantity" formControlName='quantity' pattern="[0-9]*">
+    </div>
+    <div class="form-group">
+        <label for="imageUrl">Image Url</label>
+        <input type="text" class="form-control" name="imageUrl" id="imageUrl" formControlName='imageUrl'>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" name="price" id="price" formControlName='price' pattern="[0-9]*">
+    </div>
+    <div class="form-group">
+        <label for="details">Details</label>
+        <textarea class="form-control " name="details" id="details" formControlName='details' rows="3 "></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-- <div *ngIf='flag? setClass("alert alert-danger"): setClass("alert alert-success")' class="mt-5 pt-5">
+    <div [class]='uiClass'>
+        {{productResponce.description}}
+    </div>
+</div> -->
