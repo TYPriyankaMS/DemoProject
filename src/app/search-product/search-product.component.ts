@@ -35,5 +35,4 @@ export class SearchProductComponent implements OnInit {
       alert('Please Login First');
     }
   }
-
 }

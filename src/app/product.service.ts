@@ -5,26 +5,26 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
-  httpUrl = 'http://localhost:8080';
+  httpUrl = 'http://localhost:8080/product';
   constructor(private http: HttpClient) { }
 
   getProducts(data) {
-    return this.http.get<ProductResponce>(`${this.httpUrl}/get?name=${data}`);
+    return this.http.get<ProductResponce>(`${this.httpUrl}/${data}`);
   }
 
   addProduct(data) {
-    return this.http.post<ProductResponce>(`${this.httpUrl}/add`, data);
+    return this.http.post<ProductResponce>(`${this.httpUrl}`, data);
   }
 
   modifyProduct(data) {
-    return this.http.put<ProductResponce>(`${this.httpUrl}/update`, data);
+    return this.http.put<ProductResponce>(`${this.httpUrl}`, data);
   }
 
   getAllProducts() {
-    return this.http.get<ProductResponce>(`${this.httpUrl}/get-all`);
+    return this.http.get<ProductResponce>(`${this.httpUrl}`);
   }
 
   deleteProduct(data) {
-    return this.http.delete<ProductResponce>(`${this.httpUrl}/delete/${data}`);
+    return this.http.delete<ProductResponce>(`${this.httpUrl}`);
   }
 }

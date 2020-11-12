@@ -11,10 +11,10 @@ export class DataFromJsonComponent implements OnInit {
   data;
   constructor(private http: HttpClient) {
     this.readJson();
-   }
+  }
 
   readJson() {
-    this.http.get<Product>('../../assets/products.json').subscribe(response=>{
+    this.http.get<Product>('../../assets/products.json').subscribe(response => {
       this.data = response;
       console.log(this.data);
     });
